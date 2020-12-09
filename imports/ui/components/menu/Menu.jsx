@@ -19,35 +19,22 @@ export default withTracker(() => {
                         <li className="nav-item">
                             <Link className="nav-link active" to="/">Home</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link active" to="/cutting">Cutting</Link>
-                        </li>
                         {
-                            !userId ?
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/create-account">Create account</Link>
-                                </li>
+                            userId ?
+                                <a className="nav-link" onClick={() => {Meteor.logout()}}>
+                                    Logout
+                                </a>
                                 :
-                                null
+                                <React.Fragment>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/create-account">Create account</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/login">Login</Link>
+                                    </li>
+                                </React.Fragment>
                         }
-
-                        <li className="nav-item">
-                            {
-                                userId ?
-                                    <a className="nav-link" onClick={() => {
-                                        console.log('logout')
-                                        Meteor.logout();
-                                    }}>Logout</a>
-                                    :
-                                    <Link className="nav-link" to="/login">Login</Link>
-                            }
-                        </li>
                     </ul>
-                    <div className="logo-img">
-                        <Link to="/">
-                            <img src="/logo.png" alt="Real furniture maker"/>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </header>
