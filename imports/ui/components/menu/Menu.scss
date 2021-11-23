@@ -1,18 +1,19 @@
 .menu {
-    background-color: white;
-    a {
-        color: #0070e0;
-        &:not([href]) {
-            color: #0070e0;
+    padding: 20px 0px;
+    .nav-link {
+        color: $main-grey-color;
+    }
+    .logo {
+        color: $main-blue-color;
+        @include font-size(1.2);
+        i {
+           margin: 0px 5px;
+            transition: .3s;
         }
         &:hover {
-            cursor: pointer;
-            color: #0070e0;
-            text-decoration: underline;
-            &:not([href]) {
-                color: #0070e0;
-                cursor: pointer;
-                text-decoration: underline;
+            i {
+                transform: scale(1.5);
+                display: inline-block;
             }
         }
     }

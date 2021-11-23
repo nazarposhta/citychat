@@ -1,15 +1,37 @@
+@import "{}/node_modules/bootstrap/scss/bootstrap";
 @import "{}/node_modules/toastr/toastr.scss";
+@import "{}/node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
+// icon fonts
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("/fonts/icons/bootstrap-icons.woff2?a74547b2f0863226942ff8ded57db345")
+  format("woff2"), url("/fonts/icons/bootstrap-icons.woff?a74547b2f0863226942ff8ded57db345")
+  format("woff");
+}
 
 // Font-size main mixin
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
 }
+
+// color variables
+$main-blue-color: #335eea;
+$main-grey-color: #506690;
+
+@import "../imports/ui/components/menu/Menu";
+
 * {
   padding: 0px;
   margin: 0px;
 }
 body, html {
   font-size: 100%;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
