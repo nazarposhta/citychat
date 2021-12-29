@@ -1,0 +1,14 @@
+.menu {
+    .logo {
+        display: flex;
+        align-content: center;
+    }
+    .nav-link {
+        color: $main-grey-color;
+    }
+    .dropdown-menu {
+        &[data-active="true"] {
+            display: block;
+        }
+    }
+}

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import {withTracker} from "meteor/react-meteor-data";
 
-export default withTracker((props) => {
-    return {
-        ready: true
-    }
-})((props) => {
+const HomePage = (props) => {
     const { ready } = props;
     return(
         <div className="HomePage">
@@ -23,4 +19,9 @@ export default withTracker((props) => {
             </div>
         </div>
     )
-});
+};
+export default withTracker((props) => {
+    return {
+        ready: true
+    }
+})(HomePage);

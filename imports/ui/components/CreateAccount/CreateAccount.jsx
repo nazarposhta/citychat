@@ -5,16 +5,15 @@ import toastr from "toastr";
 
 import { validateEmail, validatePassword } from "../../../lib/string";
 
-import "./CreateAccount.scss"
 
-export default () => {
+const CreateAccount = () => {
     const [isLoaded, setLoader] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
     return(
-        <div className="create-account">
+        <div className="CreateAccount">
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
@@ -102,3 +101,4 @@ export default () => {
         </div>
     )
 }
+export default CreateAccount;

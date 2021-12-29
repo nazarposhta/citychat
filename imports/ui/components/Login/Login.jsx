@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import {
     useHistory
 } from "react-router-dom";
-import { useInputChange } from '../../../lib/useInputChange';
+import { useInputChange } from '../../../hooks/useInputChange';
 import toastr from "toastr";
 import { validateEmail, validatePassword } from '../../../lib/string';
 import classNames from 'classnames';
 
-import "./Login.scss";
 
-export default (props) => {
+const Login = (props) => {
     const [input, handleInputChange] = useInputChange();
     const [isLoading, setLoading] = useState(false);
     const [dataError, setDataError] = useState({});
@@ -18,7 +17,7 @@ export default (props) => {
         <div className="container">
             <div className="row">
                 <div className="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
-                    <div className="login-container">
+                    <div className="Login">
                         <h4 className="text-center">Login</h4>
                         <form>
                             <div className="form-group">
@@ -108,3 +107,4 @@ export default (props) => {
         </div>
     )
 }
+export default Login;
