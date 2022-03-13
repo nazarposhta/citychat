@@ -2,16 +2,17 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor'
 import { Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
+import Breadcrumbs from "../common/Breadcrumbs/Breadcrumbs";
 
 const Menu = (props) => {
     const { userId } = props;
     return(
-        <header className="menu">
+        <header className="menu p-3">
             <div className="container">
                 <div className="menu-inner">
                     <div className="navbar">
                         <Link to="/" className="logo">
-                            <img src="/images/logo.svg" width="150" alt="Live Menu"/>
+                            <img src="/images/logo.svg" width="200" alt="Live Menu"/>
                         </Link>
                         <ul className="nav">
                             <li className="nav-item">
@@ -25,14 +26,19 @@ const Menu = (props) => {
                             </li>
                             {
                                 userId ?
-                                    <li className="nav-item">
-                                        <button type="button"
-                                                className="btn btn-primary"
-                                                onClick={() => {Meteor.logout()}}
-                                        >
-                                            Logout
-                                        </button>
-                                    </li>
+                                    <>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <button type="button"
+                                                    className="btn btn-primary"
+                                                    onClick={() => {Meteor.logout()}}
+                                            >
+                                                Logout
+                                            </button>
+                                        </li>
+                                    </>
                                     :
                                     <>
                                         <li className="nav-item">
@@ -46,6 +52,7 @@ const Menu = (props) => {
                         </ul>
                     </div>
                 </div>
+                <Breadcrumbs />
             </div>
         </header>
     )

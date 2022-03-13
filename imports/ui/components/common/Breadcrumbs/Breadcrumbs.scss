@@ -1,0 +1,16 @@
+.Breadcrumbs {
+    padding: 10px 0px;
+    .breadcrumb {
+        .breadcrumb-item {
+            &:before {
+                content: "";
+                font-family: "bootstrap-icons";
+            }
+            &:first-child {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

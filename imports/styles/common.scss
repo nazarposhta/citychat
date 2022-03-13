@@ -11,3 +11,17 @@ a {
         text-decoration: none;
     }
 }
+.with-spinner {
+    position: relative;
+    .spinner-wrapp {
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
